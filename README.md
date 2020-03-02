@@ -22,6 +22,19 @@ In terminal, run the following command to clone the repo:
 
    `$ npm install`
 
+1. Create an environment file to store your API Key and Secret:
+
+   `$ touch .env`
+
+1. Add the following code to the `.env` file, and insert your JWT App's API Key and Secret found on the App Crednetials page in the Zoom App Marketplace.:
+
+   ```
+   API_KEY=JWT_API_KEY_HERE
+   API_SECRET=JWT_API_SECRET_HERE
+   ```
+
+1. Save and close `.env`.
+
 1. Start the server:
 
    `$ npm run start`
