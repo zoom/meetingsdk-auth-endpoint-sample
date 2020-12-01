@@ -56,7 +56,7 @@ Request Body:
 
 ```json
 {
-  "meetingNumber": 123456789,
+  "meetingNumber": "123456789",
   "role": 0
 }
 ```
