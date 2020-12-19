@@ -26,7 +26,7 @@ In terminal, run the following command to clone the repo:
 
    `$ touch .env`
 
-1. Add the following code to the `.env` file, and insert your JWT App's API Key and Secret found on the App Crednetials page in the Zoom App Marketplace.:
+1. Add the following code to the `.env` file, and insert your JWT App's API Key and Secret found on the App Credentials page in the Zoom App Marketplace.:
 
    ```
    API_KEY=JWT_API_KEY_HERE
