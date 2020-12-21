@@ -26,7 +26,7 @@ In terminal, run the following command to clone the repo:
 
    `$ touch .env`
 
-1. Add the following code to the `.env` file, and insert your JWT App's API Key and Secret found on the App Crednetials page in the Zoom App Marketplace.:
+1. Add the following code to the `.env` file, and insert your JWT App's API Key and Secret found on the App Credentials page in the Zoom App Marketplace.:
 
    ```
    API_KEY=JWT_API_KEY_HERE
@@ -121,8 +121,8 @@ If you cloned this repo, use the [Heroku CLI](https://devcenter.heroku.com/artic
 
 1. Navigate to your app on the Heroku dashboard, click settings, and add your JWT App Credentials in the Config Variables,
 
-   - `API_SECRET` (Your Zoom JWT App API Key, found on your Zoom JWT App Credentials page)
-   - `API_KEY` (Your Zoom JWT App API Secret, found on your Zoom JWT App Credentials page)
+   - `API_SECRET` (Your Zoom JWT App API Secret, found on your Zoom JWT App Credentials page)
+   - `API_KEY` (Your Zoom JWT App API Key, found on your Zoom JWT App Credentials page)
 
 Now you can generate and [use your signature](#usage) via the deployed url Heroku provides.
 
