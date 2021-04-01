@@ -94,8 +94,8 @@ ZoomMtg.join({
 
 If you used the Deploy to Heroku button, enter a name for your app on the page the button took you to (or leave it blank to have a name generated for you), and fill in the values for these,
 
-- `API_SECRET` (Your Zoom JWT App API Key, found on your Zoom JWT App Credentials page)
-- `API_KEY` (Your Zoom JWT App API Secret, found on your Zoom JWT App Credentials page)
+- `API_SECRET` (Your Zoom JWT App API Secret, found on your Zoom JWT App Credentials page)
+- `API_KEY` (Your Zoom JWT App API Key, found on your Zoom JWT App Credentials page)
 
 Then click "Deploy App".
 
