@@ -6,12 +6,12 @@
   "keywords": ["zoom", "websdk", "signature", "node.js", "express"],
   "env": {
     "API_SECRET": {
-      "description": "Your Zoom JWT App API Key, found on your Zoom JWT App Credentials page",
+      "description": "Your Zoom JWT App API Secret, found on your Zoom JWT App Credentials page",
       "value": "",
       "required": true
     },
     "API_KEY": {
-      "description": "Your Zoom JWT App API Secret, found on your Zoom JWT App Credentials page",
+      "description": "Your Zoom JWT App API Key, found on your Zoom JWT App Credentials page",
       "value": "",
       "required": true
     }
