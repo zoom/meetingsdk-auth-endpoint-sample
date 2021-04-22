@@ -1,6 +1,6 @@
-# Zoom Web SDK Sample Signature Node.js
+# Zoom Web Client SDK Sample Signature Node.js
 
-This is a Node.js / Express server that generates a [Web SDK signature](https://marketplace.zoom.us/docs/sdk/native-sdks/web/essential/signature) via an http request from your frontend for use in the Web SDK.
+This is a Node.js / Express server that generates a [Web Client SDK signature](https://marketplace.zoom.us/docs/sdk/native-sdks/web/essential/signature) via an http request from your frontend for use in the Web Client SDK.
 
 If you would like to skip these steps and just deploy the finished code to Heroku, click the Deploy to Heroku button. (You will still need to configure a few simple things, so skip to [Deployment](#deployment).)
 
@@ -26,11 +26,11 @@ In terminal, run the following command to clone the repo:
 
    `$ touch .env`
 
-1. Add the following code to the `.env` file, and insert your JWT App's API Key and Secret found on the App Credentials page in the Zoom App Marketplace.:
+1. Add the following code to the `.env` file, and insert your Zoom JWT App's API Key and Secret found on the App Credentials page in the Zoom App Marketplace:
 
    ```
-   API_KEY=JWT_API_KEY_HERE
-   API_SECRET=JWT_API_SECRET_HERE
+   ZOOM_JWT_API_KEY=JWT_API_KEY_HERE
+   ZOOM_JWT_API_SECRET=JWT_API_SECRET_HERE
    ```
 
 1. Save and close `.env`.
@@ -69,7 +69,7 @@ If successful, the response body will be a JSON representation of your signature
 }
 ```
 
-In the [Web SDK](https://marketplace.zoom.us/docs/sdk/native-sdks/web/essential/start-join-meeting), pass in the `signature` to the `ZoomMtg.join()` object:
+In the [Web Client SDK](https://marketplace.zoom.us/docs/sdk/native-sdks/web/essential/start-join-meeting), pass in the `signature` to the `ZoomMtg.join()` object:
 
 ```js
 // make http request to your server to get the signature
@@ -94,8 +94,8 @@ ZoomMtg.join({
 
 If you used the Deploy to Heroku button, enter a name for your app on the page the button took you to (or leave it blank to have a name generated for you), and fill in the values for these,
 
-- `API_SECRET` (Your Zoom JWT App API Secret, found on your Zoom JWT App Credentials page)
-- `API_KEY` (Your Zoom JWT App API Key, found on your Zoom JWT App Credentials page)
+- `ZOOM_JWT_API_KEY` (Your Zoom JWT App API Key, found on your Zoom JWT App Credentials page)
+- `ZOOM_JWT_API_SECRET` (Your Zoom JWT App API Secret, found on your Zoom JWT App Credentials page)
 
 Then click "Deploy App".
 
@@ -121,8 +121,8 @@ If you cloned this repo, use the [Heroku CLI](https://devcenter.heroku.com/artic
 
 1. Navigate to your app on the Heroku dashboard, click settings, and add your JWT App Credentials in the Config Variables,
 
-   - `API_SECRET` (Your Zoom JWT App API Secret, found on your Zoom JWT App Credentials page)
-   - `API_KEY` (Your Zoom JWT App API Key, found on your Zoom JWT App Credentials page)
+   - `ZOOM_JWT_API_KEY` (Your Zoom JWT App API Key, found on your Zoom JWT App Credentials page)
+   - `ZOOM_JWT_API_SECRET` (Your Zoom JWT App API Secret, found on your Zoom JWT App Credentials page)
 
 Now you can generate and [use your signature](#usage) via the deployed url Heroku provides.
 
