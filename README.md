@@ -1,8 +1,8 @@
-# Zoom Web Client SDK Sample Signature Node.js
+# Zoom Web Meeting SDK Sample Signature Node.js
 
 Use of this sample app is subject to our [Terms of Use](https://zoom.us/docs/en-us/zoom_api_license_and_tou.html).
 
-This is a Node.js / Express server that generates a [Web Client SDK signature](https://marketplace.zoom.us/docs/sdk/native-sdks/web/essential/signature) via an http request from your frontend for use in the Web Client SDK.
+This is a Node.js / Express server that generates a [Web Meeting SDK signature](https://marketplace.zoom.us/docs/sdk/native-sdks/web/essential/signature) via an http request from your frontend for use in the Web Meeting SDK.
 
 If you would like to skip these steps and just deploy the finished code to Heroku, click the Deploy to Heroku button. (You will still need to configure a few simple things, so skip to [Deployment](#deployment).)
 
@@ -12,13 +12,13 @@ If you would like to skip these steps and just deploy the finished code to Herok
 
 In terminal, run the following command to clone the repo:
 
-`$ git clone https://github.com/zoom/websdk-sample-signature-node.js.git`
+`$ git clone https://github.com/zoom/meetingsdk-sample-signature-node.js.git`
 
 ## Setup
 
 1. In terminal, cd into the cloned repo:
 
-   `$ cd websdk-sample-signature-node.js`
+   `$ cd meetingsdk-sample-signature-node.js`
 
 1. Then install the dependencies:
 
@@ -71,7 +71,7 @@ If successful, the response body will be a JSON representation of your signature
 }
 ```
 
-In the [Web Client SDK](https://marketplace.zoom.us/docs/sdk/native-sdks/web/essential/start-join-meeting), pass in the `signature` to the `ZoomMtg.join()` object:
+In the [Web Meeting SDK](https://marketplace.zoom.us/docs/sdk/native-sdks/web/essential/start-join-meeting), pass in the `signature` to the `ZoomMtg.join()` object:
 
 ```js
 // make http request to your server to get the signature

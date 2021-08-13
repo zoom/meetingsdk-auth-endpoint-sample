@@ -22,4 +22,4 @@ app.post('/', (req, res) => {
   })
 })
 
-app.listen(port, () => console.log(`Zoom Web Client SDK Sample Signature Node.js on port ${port}!`))
+app.listen(port, () => console.log(`Zoom Web Meeting SDK Sample Signature Node.js on port ${port}!`))

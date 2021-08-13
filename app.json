@@ -1,9 +1,9 @@
 {
-  "name": "Zoom Web Client SDK Sample Signature Node.js",
-  "description": "Genrerate a signature to Start and Join Meetings and Webinars with the Zoom Web Client SDK.",
-  "repository": "https://github.com/zoom/websdk-sample-signature-node.js",
+  "name": "Zoom Web Meeting SDK Sample Signature Node.js",
+  "description": "Genrerate a signature to Start and Join Meetings and Webinars with the Zoom Web Meeting SDK.",
+  "repository": "https://github.com/zoom/meetingsdk-sample-signature-node.js",
   "logo": "https://avatars1.githubusercontent.com/u/29114944?s=200&v=4",
-  "keywords": ["zoom", "websdk", "signature", "node.js", "express"],
+  "keywords": ["zoom", "websdk", "signature", "node.js", "express", "meetingsdk"],
   "env": {
     "ZOOM_JWT_API_KEY": {
       "description": "Your Zoom JWT App API Key, found on your Zoom JWT App Credentials page",
