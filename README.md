@@ -82,7 +82,7 @@ ZoomMtg.join({
   userName: userName,
   apiKey: apiKey,
   userEmail: userEmail,
-  passWord: password,
+  password: password,
   success: (success) => {
     console.log(success)
   },
