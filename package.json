@@ -1,7 +1,7 @@
 {
   "name": "meetingsdk-sample-signature-node.js",
   "version": "2.3.0",
-  "description": "Genrerate a signature to Start and Join Meetings and Webinars with the Zoom Web Meeting SDK.",
+  "description": "Generate a signature to Start and Join Meetings and Webinars with the Zoom Meeting SDKs.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
