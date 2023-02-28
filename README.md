@@ -1,14 +1,14 @@
-# Zoom Meeting SDK Sample Signature Node.js
+# Zoom Meeting SDK Auth Endpoint Sample Node.js
 
 Use of this sample app is subject to our [Terms of Use](https://zoom.us/docs/en-us/zoom_api_license_and_tou.html).
 
 ---
 
-**NOTE:** This Sample App has been updated to use [SDK App](https://marketplace.zoom.us/docs/guides/build/sdk-app) type credentials instead of [JWT App](https://marketplace.zoom.us/docs/guides/build/jwt-app) type credentials.
+**NOTE:** This sample app has been updated to use [Meeting SDK app type](https://marketplace.zoom.us/docs/guides/build/sdk-app) credentials instead of [JWT app type](https://marketplace.zoom.us/docs/guides/build/jwt-app) type credentials.
 
 ---
 
-This is a Node.js / Express server that generates a [Web or Native Meeting SDK signature](https://marketplace.zoom.us/docs/sdk/native-sdks/web/signature) via an http request from your frontend for use in the Web or Native Meeting SDKs.
+This is a Node.js / Express server that generates a [Meeting SDK JWT](https://marketplace.zoom.us/docs/sdk/native-sdks/web/signature) via an http request for authorized use of the Meeting SDK.
 
 If you would like to skip these steps and just deploy the finished code to Heroku, click the Deploy to Heroku button. (You will still need to configure a few simple things, so skip to [Deployment](#deployment).)
 
@@ -30,15 +30,15 @@ In terminal, run the following command to clone the repo:
 
    `$ npm install`
 
-1. Create an environment file to store your SDK Key and Secret:
+1. Create an environment file to store your Meeting SDK credentials:
 
    `$ touch .env`
 
-1. Add the following code to the `.env` file, and insert your Zoom SDK App's Key and Secret found on the App Credentials page in the Zoom App Marketplace:
+1. Add the following code to the `.env` file, and insert your Zoom Meeting SDK Key and Secret or Client ID and Client Secret for Meeting SDK app type's created after February 11, 2023, found on the App Credentials page in the Zoom App Marketplace:
 
    ```
-   ZOOM_SDK_KEY=SDK_KEY_HERE
-   ZOOM_SDK_SECRET=SDK_SECRET_HERE
+   ZOOM_MEETING_SDK_KEY=MEETING_SDK_KEY_HERE
+   ZOOM_MEETING_SDK_SECRET=MEETING_SDK_SECRET_HERE
    ```
 
 1. Save and close `.env`.
@@ -69,7 +69,7 @@ Request Body:
 }
 ```
 
-If successful, the response body will be a JSON representation of your signature:
+If successful, the response body will be a JSON representation of your Meeting SDK JWT:
 
 ```json
 {
@@ -77,14 +77,12 @@ If successful, the response body will be a JSON representation of your signature
 }
 ```
 
-In the [Web or Native Meeting SDK](https://marketplace.zoom.us/docs/sdk/native-sdks/web), pass in the `signature` to the `join()` function:
+In the [Meeting SDK](https://marketplace.zoom.us/docs/sdk/native-sdks/introduction/), pass in the `signature` to the `join()` function:
 
 ```js
-// 1. Make http request to your server to get the signature
+// Make http request to your auth endpoint to get the Meeting SDK JWT
 
-// 2. Pass in the signature to the join function
-
-// Web Meeting SDK Client View example
+// Meeting SDK - web - Client View - example:
 ZoomMtg.join({
   signature: signature,
   sdkKey: sdkKey,
@@ -93,7 +91,7 @@ ZoomMtg.join({
   passWord: password
 })
 
-// Web Meeting SDK Component View example
+// Meeting SDK - web - Component View - example:
 client.join({
   signature: signature,
   sdkKey: sdkKey,
@@ -107,12 +105,12 @@ client.join({
 
 If you used the Deploy to Heroku button, enter a name for your app on the page the button took you to (or leave it blank to have a name generated for you), and fill in the values for these,
 
-- `ZOOM_SDK_KEY` (Your Zoom SDK App Key, found on your Zoom SDK App Credentials page)
-- `ZOOM_SDK_SECRET` (Your Zoom SDK App Secret, found on your Zoom SDK App Credentials page)
+- `ZOOM_MEETING_SDK_KEY` (Your Zoom Meeting SDK Key or Client ID for Meeting SDK app type's created after February 11, 2023, found on your Zoom Meeting SDK App Credentials page)
+- `ZOOM_MEETING_SDK_SECRET` (Your Zoom Meeting SDK Secret or Client Secret for Meeting SDK app type's created after February 11, 2023, found on your Zoom Meeting SDK App Credentials page)
 
 Then click "Deploy App".
 
-Now you can generate and [use your signature](#usage) via the deployed url Heroku provides.
+Now you can generate [your Meeting SDK JWT](#usage) via the deployed url Heroku provides.
 
 If you cloned this repo, use the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) to deploy your server.
 
@@ -134,10 +132,10 @@ If you cloned this repo, use the [Heroku CLI](https://devcenter.heroku.com/artic
 
 1. Navigate to your app on the Heroku dashboard, click settings, and add your SDK App Credentials in the Config Variables,
 
-   - `ZOOM_SDK_KEY` (Your Zoom SDK App Key, found on your Zoom SDK App Credentials page)
-   - `ZOOM_SDK_SECRET` (Your Zoom SDK App Secret, found on your Zoom SDK App Credentials page)
+   - `ZOOM_MEETING_SDK_KEY` (Your Zoom Meeting SDK Key or Client ID for Meeting SDK app type's created after February 11, 2023, found on your Zoom Meeting SDK App Credentials page)
+   - `ZOOM_MEETING_SDK_SECRET` (Your Zoom Meeting SDK Secret or Client Secret for Meeting SDK app type's created after February 11, 2023, found on your Zoom Meeting SDK App Credentials page)
 
-Now you can generate and [use your signature](#usage) via the deployed url Heroku provides.
+Now you can generate [your Meeting SDK JWT](#usage) via the deployed url Heroku provides.
 
 ## Need help?
 
