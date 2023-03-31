@@ -1,14 +1,14 @@
-# Zoom Meeting SDK Auth Endpoint Sample Node.js
+# Zoom Meeting SDK Auth Endpoint sample
 
-Use of this sample app is subject to our [Terms of Use](https://zoom.us/docs/en-us/zoom_api_license_and_tou.html).
-
----
-
-**NOTE:** This sample app has been updated to use [Meeting SDK app type](https://marketplace.zoom.us/docs/guides/build/sdk-app) credentials instead of [JWT app type](https://marketplace.zoom.us/docs/guides/build/jwt-app) type credentials.
+Use of this sample app is subject to our [Terms of Use](https://explore.zoom.us/en/legal/zoom-api-license-and-tou/).
 
 ---
 
-This is a Node.js / Express server that generates a [Meeting SDK JWT](https://marketplace.zoom.us/docs/sdk/native-sdks/auth/) via an http request for authorized use of the Meeting SDK.
+**NOTE:** This sample app has been updated to use [Meeting SDK app type](https://developers.zoom.us/docs/meeting-sdk/create/) credentials instead of [JWT app type](https://developers.zoom.us/docs/platform/build/jwt-app/) type credentials.
+
+---
+
+This is a Node.js / Express server that generates a [Meeting SDK JWT](https://developers.zoom.us/docs/meeting-sdk/auth/#generate-a-meeting-sdk-jwt) via an http request for authorized use of the Meeting SDK.
 
 If you would like to skip these steps and just deploy the finished code to Heroku, click the Deploy to Heroku button. (You will still need to configure a few simple things, so skip to [Deployment](#deployment).)
 
@@ -18,13 +18,13 @@ If you would like to skip these steps and just deploy the finished code to Herok
 
 In terminal, run the following command to clone the repo:
 
-`$ git clone https://github.com/zoom/meetingsdk-sample-signature-node.js.git`
+`$ git clone https://github.com/zoom/meetingsdk-auth-endpoint-sample.git`
 
 ## Setup
 
 1. In terminal, cd into the cloned repo:
 
-   `$ cd meetingsdk-sample-signature-node.js`
+   `$ cd meetingsdk-auth-endpoint-sample`
 
 1. Then install the dependencies:
 
@@ -77,7 +77,7 @@ If successful, the response body will be a JSON representation of your Meeting S
 }
 ```
 
-In the [Meeting SDK](https://marketplace.zoom.us/docs/sdk/native-sdks/introduction/), pass in the `signature` to the `join()` function:
+In the [Meeting SDK](https://developers.zoom.us/docs/meeting-sdk/auth/#join-meetings-and-webinars-with-the-meeting-sdk-jwt), pass in the `signature` to the `join()` function:
 
 ```js
 // Make http request to your auth endpoint to get the Meeting SDK JWT
@@ -139,4 +139,4 @@ Now you can generate [your Meeting SDK JWT](#usage) via the deployed url Heroku 
 
 ## Need help?
 
-If you're looking for help, try [Developer Support](https://devsupport.zoom.us) or our [Developer Forum](https://devforum.zoom.us). Priority support is also available with [Premier Developer Support](https://zoom.us/docs/en-us/developer-support-plans.html) plans.
+If you're looking for help, try [Developer Support](https://devsupport.zoom.us) or our [Developer Forum](https://devforum.zoom.us). Priority support is also available with [Premier Developer Support](https://explore.zoom.us/docs/en-us/developer-support-plans.html) plans.

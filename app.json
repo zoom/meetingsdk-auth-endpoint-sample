@@ -1,9 +1,9 @@
 {
-  "name": "Zoom Meeting SDK Auth Endpoint Sample Node.js",
+  "name": "Zoom Meeting SDK Auth Endpoint sample",
   "description": "Generate a Meeting SDK JWT to join Zoom meetings and webinars with the Meeting SDK.",
-  "repository": "https://github.com/zoom/meetingsdk-sample-signature-node.js",
+  "repository": "https://github.com/zoom/meetingsdk-auth-endpoint-sample",
   "logo": "https://avatars1.githubusercontent.com/u/29114944?s=200&v=4",
-  "keywords": ["zoom", "signature", "node.js", "express", "meetingsdk"],
+  "keywords": ["zoom", "meetingsdk", "jwt", "node.js", "express"],
   "env": {
     "ZOOM_MEETING_SDK_KEY": {
       "description": "Your Zoom Meeting SDK Key or Client ID for Meeting SDK app type's created after February 11, 2023, found on your Zoom Meeting SDK app's credentials page",

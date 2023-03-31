@@ -1,6 +1,6 @@
 {
-  "name": "meetingsdk-sample-signature-node.js",
-  "version": "2.10.0",
+  "name": "meetingsdk-auth-endpoint-sample",
+  "version": "2.11.0",
   "description": "Generate a Meeting SDK JWT to join Zoom meetings and webinars with the Meeting SDK.",
   "main": "index.js",
   "scripts": {
