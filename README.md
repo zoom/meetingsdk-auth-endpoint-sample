@@ -135,7 +135,11 @@ If you cloned this repo, use the [Heroku CLI](https://devcenter.heroku.com/artic
    - `ZOOM_MEETING_SDK_KEY` (Your Zoom Meeting SDK Key or Client ID for Meeting SDK app type's created after February 11, 2023, found on your Zoom Meeting SDK App Credentials page)
    - `ZOOM_MEETING_SDK_SECRET` (Your Zoom Meeting SDK Secret or Client Secret for Meeting SDK app type's created after February 11, 2023, found on your Zoom Meeting SDK App Credentials page)
 
-Now you can generate [your Meeting SDK JWT](#usage) via the deployed url Heroku provides.
+### Other Server Hosting
+
+For Other Server Hosting information, see [this tutorial](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/deployment#choosing_a_hosting_provider).
+
+Now you can [generate your Meeting SDK JWT](#usage) via the deployed url Heroku provides.
 
 ## Need help?
 
