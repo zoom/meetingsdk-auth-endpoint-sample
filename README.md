@@ -34,7 +34,7 @@ In terminal, run the following command to clone the repo:
 
    `$ touch .env`
 
-1. Add the following code to the `.env` file, and insert your Zoom Meeting SDK Key and Secret or Client ID and Client Secret for Meeting SDK app type's created after February 11, 2023, found on the App Credentials page in the Zoom App Marketplace:
+1. Add the following code to the `.env` file, and insert your [Zoom Meeting SDK credentials](https://developers.zoom.us/docs/meeting-sdk/developer-accounts/#get-meeting-sdk-credentials):
 
    ```
    ZOOM_MEETING_SDK_KEY=MEETING_SDK_KEY_HERE
@@ -103,43 +103,36 @@ client.join({
 
 ## Deployment
 
-If you used the Deploy to Heroku button, enter a name for your app on the page the button took you to (or leave it blank to have a name generated for you), and fill in the values for these,
+### Heroku (button)
 
-- `ZOOM_MEETING_SDK_KEY` (Your Zoom Meeting SDK Key or Client ID for Meeting SDK app type's created after February 11, 2023, found on your Zoom Meeting SDK App Credentials page)
-- `ZOOM_MEETING_SDK_SECRET` (Your Zoom Meeting SDK Secret or Client Secret for Meeting SDK app type's created after February 11, 2023, found on your Zoom Meeting SDK App Credentials page)
-
-Then click "Deploy App".
-
-Now you can generate [your Meeting SDK JWT](#usage) via the deployed url Heroku provides.
-
-If you cloned this repo, use the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) to deploy your server.
-
-1. In terminal, create a Heroku app:
-
-   `$ heroku create`
-
-1. Add your files:
-
-   `$ git add -A`
-
-1. Commit your files:
-
-   `$ git commit -m "deploying to heroku"`
-
-1. Deploy your server by pushing your files to Heroku:
-
-   `$ git push origin heroku`
-
-1. Navigate to your app on the Heroku dashboard, click settings, and add your SDK App Credentials in the Config Variables,
+1. After clicking the "Deploy to Heroku" button, enter a name for your app (or leave it blank to have a name generated for you), and insert your [Zoom Meeting SDK credentials](https://developers.zoom.us/docs/meeting-sdk/developer-accounts/#get-meeting-sdk-credentials):
 
    - `ZOOM_MEETING_SDK_KEY` (Your Zoom Meeting SDK Key or Client ID for Meeting SDK app type's created after February 11, 2023, found on your Zoom Meeting SDK App Credentials page)
    - `ZOOM_MEETING_SDK_SECRET` (Your Zoom Meeting SDK Secret or Client Secret for Meeting SDK app type's created after February 11, 2023, found on your Zoom Meeting SDK App Credentials page)
 
+1. Then click "Deploy App".
+
+1. Use your Heroku URL as your Meeting SDK Auth Endpoint.
+
+   Example: `https://abc123.herokuapp.com/`
+
+### Heroku (CLI)
+
+1. If you cloned this repo, you may use the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) to deploy your server. Remember to [set your config vars (envoirnment variables)](https://devcenter.heroku.com/articles/config-vars).
+
+1. Use your Heroku URL as your Meeting SDK Auth Endpoint.
+
+   Example: `https://abc123.herokuapp.com/`
+
 ### Other Server Hosting
 
-For Other Server Hosting information, see [this tutorial](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/deployment#choosing_a_hosting_provider).
+1. For Other Server Hosting information, see [this tutorial](https://developer.mozilla.org/en-US/docs/Learn/Server-side/Express_Nodejs/deployment#choosing_a_hosting_provider).
 
-Now you can [generate your Meeting SDK JWT](#usage) via the deployed url Heroku provides.
+1. Use your deployed URL as your Meeting SDK Auth Endpoint.
+
+   Example: `https://abc123.compute-1.amazonaws.com/`
+
+Now you can [generate your Meeting SDK JWT](#usage).
 
 ## Need help?
 
