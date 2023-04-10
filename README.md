@@ -8,7 +8,7 @@ Use of this sample app is subject to our [Terms of Use](https://explore.zoom.us/
 
 ---
 
-This is a Node.js / Express server that generates a [Meeting SDK JWT](https://developers.zoom.us/docs/meeting-sdk/auth/#generate-a-meeting-sdk-jwt) via an http request for authorized use of the Meeting SDK.
+This is a Node.js / Express server that generates a [Meeting SDK JWT](https://developers.zoom.us/docs/meeting-sdk/auth/#generate-a-meeting-sdk-jwt) via an http request for authorized use of the [Zoom Meeting SDK](https://developers.zoom.us/docs/meeting-sdk/).
 
 If you would like to skip these steps and just deploy the finished code to Heroku, click the Deploy to Heroku button. (You will still need to configure a few simple things, so skip to [Deployment](#deployment).)
 
