@@ -21,7 +21,7 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^8.2.0",
+    "dotenv": "^16.3.1",
     "express": "^4.18.2",
     "jsrsasign": "^10.5.25"
   },

@@ -12,7 +12,7 @@ app.use(express.json(), cors())
 app.options('*', cors())
 
 const propValidations = {
-  role: [inNumberArray([0, 1])],
+  role: inNumberArray([0, 1]),
   expirationSeconds: isBetween(1800, 172800)
 }
 

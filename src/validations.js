@@ -45,9 +45,7 @@ export const isRequiredAllOrNone = (requiredKeys) => (body) => {
   if (!isValid) {
     return {
       property: '$schema',
-      reason: `If one of the following properties is present, all or none of them must be present: ${requiredKeys.join(
-        ', '
-      )}`
+      reason: `If one of the following properties is present, all or none must be present: ${requiredKeys.join(', ')}`
     }
   }
 }
@@ -61,6 +59,5 @@ export const validateRequest = (body, propertyValidator, schemaValidator) => {
     const validations = Array.isArray(func) ? func.map((f) => f(property, value)) : func?.(property, value)
     return Array.isArray(validations) ? validations : [validations]
   })
-  const allValidations = schemaValidations.concat(propValidations).filter(isValidationError)
-  return allValidations
+  return schemaValidations.concat(propValidations).filter(isValidationError)
 }
