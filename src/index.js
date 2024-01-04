@@ -36,24 +36,23 @@ app.post('/', (req, res) => {
 
   const { meetingNumber, role, expirationSeconds } = requestBody
   const iat = Math.floor(Date.now() / 1000)
-  const exp = expirationSeconds ? iat + expirationSeconds : iat + 2 * 60 * 60
+  const exp = expirationSeconds ? iat + expirationSeconds : iat + 60 * 60 * 2
+  const oHeader = { alg: 'HS256', typ: 'JWT' }
 
-  return res.json({
-    signature: KJUR.jws.JWS.sign(
-      null,
-      { alg: 'HS256', typ: 'JWT' },
-      JSON.stringify({
-        appKey: process.env.ZOOM_MEETING_SDK_KEY,
-        sdkKey: process.env.ZOOM_MEETING_SDK_KEY,
-        mn: meetingNumber,
-        role,
-        iat,
-        exp,
-        tokenExp: exp
-      }),
-      process.env.ZOOM_MEETING_SDK_SECRET
-    )
-  })
+  const oPayload = {
+    appKey: process.env.ZOOM_MEETING_SDK_KEY,
+    sdkKey: process.env.ZOOM_MEETING_SDK_KEY,
+    mn: meetingNumber,
+    role,
+    iat,
+    exp,
+    tokenExp: exp
+  }
+
+  const sHeader = JSON.stringify(oHeader)
+  const sPayload = JSON.stringify(oPayload)
+  const sdkJWT = KJUR.jws.JWS.sign('HS256', sHeader, sPayload, process.env.ZOOM_MEETING_SDK_SECRET)
+  return res.json({ signature: sdkJWT })
 })
 
 app.listen(port, () => console.log(`Zoom Meeting SDK Auth Endpoint Sample Node.js, listening on port ${port}!`))
