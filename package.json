@@ -19,6 +19,6 @@
     "cors": "^2.8.5",
     "dotenv": "^8.2.0",
     "express": "^4.18.2",
-    "jsrsasign": "^10.5.25"
+    "jsrsasign": "^11.0.0"
   }
 }
