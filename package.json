@@ -23,7 +23,7 @@
     "cors": "^2.8.5",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "jsrsasign": "^10.5.25"
+    "jsrsasign": "^11.0.0"
   },
   "devDependencies": {
     "husky": "^8.0.0",
