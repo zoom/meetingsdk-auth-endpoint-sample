@@ -4,11 +4,11 @@ Use of this sample app is subject to our [Terms of Use](https://explore.zoom.us/
 
 ---
 
-**NOTE:** This sample app has been updated to use [Meeting SDK app type](https://developers.zoom.us/docs/meeting-sdk/create/) credentials instead of [JWT app type](https://developers.zoom.us/docs/platform/build/jwt-app/) type credentials.
+**NOTE:** This sample app has been updated to use [Meeting SDK app type](https://developers.zoom.us/docs/meeting-sdk/create/) credentials instead of [JWT app type](https://developers.zoom.us/docs/internal-apps/jwt/) type credentials.
 
 ---
 
-This is a Node.js / Express server that generates a [Meeting SDK JWT](https://developers.zoom.us/docs/meeting-sdk/auth/#generate-a-meeting-sdk-jwt) via an http request for authorized use of the [Zoom Meeting SDK](https://developers.zoom.us/docs/meeting-sdk/).
+This is a Node.js / Express server that generates a [Meeting SDK JWT](https://developers.zoom.us/docs/meeting-sdk/auth/#generate-a-meeting-sdk-jwt) via an HTTP request for authorized use of the [Zoom Meeting SDK](https://developers.zoom.us/docs/meeting-sdk/).
 
 If you would like to skip these steps and just deploy the finished code to Heroku, click the Deploy to Heroku button. (You will still need to configure a few simple things, so skip to [Deployment](#deployment).)
 
@@ -22,7 +22,7 @@ In terminal, run the following command to clone the repo:
 
 ## Setup
 
-1. In terminal, cd into the cloned repo:
+1. In terminal, `cd` into the cloned repository:
 
    `$ cd meetingsdk-auth-endpoint-sample`
 
@@ -30,20 +30,9 @@ In terminal, run the following command to clone the repo:
 
    `$ npm install`
 
-1. Create an environment file to store your Meeting SDK credentials:
+2. Rename `.env.example` to `.env`, edit the file contents to include your [Zoom Meeting SDK key and secret](https://developers.zoom.us/docs/meeting-sdk/developer-accounts/), save the file contents, and close the file.
 
-   `$ touch .env`
-
-1. Add the following code to the `.env` file, and insert your [Zoom Meeting SDK credentials](https://developers.zoom.us/docs/meeting-sdk/developer-accounts/#get-meeting-sdk-credentials):
-
-   ```
-   ZOOM_MEETING_SDK_KEY=MEETING_SDK_KEY_HERE
-   ZOOM_MEETING_SDK_SECRET=MEETING_SDK_SECRET_HERE
-   ```
-
-1. Save and close `.env`.
-
-1. Start the server:
+3. Start the server:
 
    `$ npm run start`
 
@@ -51,10 +40,14 @@ In terminal, run the following command to clone the repo:
 
 Make a POST request to `http://localhost:4000` (or your deployed url) with the following request body:
 
-| Key                   | Value Description |
-| -----------------------|-------------|
-| meetingNumber          | Required, the Zoom Meeting or Webinar Number. |
-| role                   | Required, `0` to specify participant, `1` to specify host.  |
+| Property            | Type     | Required?  | Validation Rule(s)                                                                          |
+| ------------------- | -------- | ---------- | ------------------------------------------------------------------------------------------- |
+| `meetingNumber`     | `string` | Yes (web)* | - Required if generating a web JWT, optional for native.                                    |
+| `role`              | `number` | Yes (web)* | - Required if generating a web JWT, optional for native. <br> - Must be equal to `0` or `1` |
+| `expirationSeconds` | `number` | No         | - Must be between `1800` (30 minutes) and `172800` (48 hours) seconds                       |
+
+> [!IMPORTANT]
+> If `meetingNumber` or `role` are supplied in the request body, the other must be present as well. If both are supplied, the JWT will be valid for web, otherwise it will be valid for native.
 
 ### Example Request
 
