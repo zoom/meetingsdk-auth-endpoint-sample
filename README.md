@@ -10,9 +10,13 @@ Use of this sample app is subject to our [Terms of Use](https://explore.zoom.us/
 
 This is a Node.js / Express server that generates a [Meeting SDK JWT](https://developers.zoom.us/docs/meeting-sdk/auth/#generate-a-meeting-sdk-jwt) via an HTTP request for authorized use of the [Zoom Meeting SDK](https://developers.zoom.us/docs/meeting-sdk/).
 
-If you would like to skip these steps and just deploy the finished code to Heroku, click the Deploy to Heroku button. (You will still need to configure a few simple things, so skip to [Deployment](#deployment).)
+If you would like to skip these steps and just deploy the finished code to a managed service, click the Deploy to Railway/Render/Heroku button. (You will still need to configure a few simple things, so skip to [Deployment](#deployment).)
 
-[![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/zoom/meetingsdk-auth-endpoint-sample)
+| Railway | Render | Heroku |
+|:-:|:-:|:-:|
+| [![Deploy on Railway](https://railway.app/button.svg)](https://railway.app/template/JsX6Pk?referralCode=HTPdHX) | [![Deploy to Render](https://render.com/images/deploy-to-render-button.svg)](https://render.com/deploy?repo=https://github.com/zoom/meetingsdk-auth-endpoint-sample) | [![Deploy](https://www.herokucdn.com/deploy/button.svg)](https://heroku.com/deploy?template=https://github.com/zoom/meetingsdk-auth-endpoint-sample) | 
+
+> Note: Both Railway and Render have free tiers, but Heroku requires a credit card to deploy.
 
 ## Installation
 
@@ -96,26 +100,29 @@ client.join({
 
 ## Deployment
 
-### Heroku (button)
+### Deploy to a Managed Service
 
-1. After clicking the "Deploy to Heroku" button, enter a name for your app (or leave it blank to have a name generated for you), and insert your [Zoom Meeting SDK credentials](https://developers.zoom.us/docs/meeting-sdk/developer-accounts/#get-meeting-sdk-credentials):
+1. After clicking the "Deploy to <Provider\>" button, enter a name for your app (or leave it blank to have a name generated for you), and insert your [Zoom Meeting SDK credentials](https://developers.zoom.us/docs/meeting-sdk/developer-accounts/#get-meeting-sdk-credentials):
 
    - `ZOOM_MEETING_SDK_KEY` (Your Zoom Meeting SDK Key or Client ID for Meeting SDK app type's created after February 11, 2023, found on your Zoom Meeting SDK App Credentials page)
    - `ZOOM_MEETING_SDK_SECRET` (Your Zoom Meeting SDK Secret or Client Secret for Meeting SDK app type's created after February 11, 2023, found on your Zoom Meeting SDK App Credentials page)
 
 1. Then click "Deploy App".
 
-1. Use your Heroku URL as your Meeting SDK Auth Endpoint.
+1. Use your URL as your Meeting SDK Auth Endpoint.
 
-   Example: `https://abc123.herokuapp.com/`
+   Example: `https://abc123.provider.com/`
 
-### Heroku (CLI)
+```bash
+$ curl <YOU_URL> -X POST -d '{  "role": "1", "meetingNumber": "123123123"}' -H "Content-Type: application/json"
+```
+<!-- ### Heroku (CLI)
 
 1. If you cloned this repo, you may use the [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli) to deploy your server. Remember to [set your config vars (envoirnment variables)](https://devcenter.heroku.com/articles/config-vars).
 
 1. Use your Heroku URL as your Meeting SDK Auth Endpoint.
 
-   Example: `https://abc123.herokuapp.com/`
+   Example: `https://abc123.herokuapp.com/` -->
 
 ### Other Server Hosting
 
