@@ -52,7 +52,7 @@ app.post('/', (req, res) => {
   const sHeader = JSON.stringify(oHeader)
   const sPayload = JSON.stringify(oPayload)
   const sdkJWT = KJUR.jws.JWS.sign('HS256', sHeader, sPayload, process.env.ZOOM_MEETING_SDK_SECRET)
-  return res.json({ signature: sdkJWT })
+  return res.json({ signature: sdkJWT, sdkKey: process.env.ZOOM_MEETING_SDK_KEY })
 })
 
 app.listen(port, () => console.log(`Zoom Meeting SDK Auth Endpoint Sample Node.js, listening on port ${port}!`))
