@@ -13,14 +13,15 @@ app.options('*', cors())
 
 const propValidations = {
   role: inNumberArray([0, 1]),
-  expirationSeconds: isBetween(1800, 172800)
+  expirationSeconds: isBetween(1800, 172800),
+  videoWebRtcMode: inNumberArray([0, 1])
 }
 
 const schemaValidations = [isRequiredAllOrNone(['meetingNumber', 'role'])]
 
 const coerceRequestBody = (body) => ({
   ...body,
-  ...['role', 'expirationSeconds'].reduce(
+  ...['role', 'expirationSeconds', 'videoWebRtcMode'].reduce(
     (acc, cur) => ({ ...acc, [cur]: typeof body[cur] === 'string' ? parseInt(body[cur]) : body[cur] }),
     {}
   )
@@ -34,7 +35,7 @@ app.post('/', (req, res) => {
     return res.status(400).json({ errors: validationErrors })
   }
 
-  const { meetingNumber, role, expirationSeconds } = requestBody
+  const { meetingNumber, role, expirationSeconds, videoWebRtcMode } = requestBody
   const iat = Math.floor(Date.now() / 1000)
   const exp = expirationSeconds ? iat + expirationSeconds : iat + 60 * 60 * 2
   const oHeader = { alg: 'HS256', typ: 'JWT' }
@@ -46,7 +47,8 @@ app.post('/', (req, res) => {
     role,
     iat,
     exp,
-    tokenExp: exp
+    tokenExp: exp,
+    video_webrtc_mode: videoWebRtcMode
   }
 
   const sHeader = JSON.stringify(oHeader)

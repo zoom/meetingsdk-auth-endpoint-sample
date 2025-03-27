@@ -43,6 +43,7 @@ Make a POST request to `http://localhost:4000` (or your deployed url) with the f
 | `meetingNumber`     | `string` | Yes (web)* | - Required if generating a web JWT, optional for native.                                    |
 | `role`              | `number` | Yes (web)* | - Required if generating a web JWT, optional for native. <br> - Must be equal to `0` or `1` |
 | `expirationSeconds` | `number` | No         | - Must be between `1800` (30 minutes) and `172800` (48 hours) seconds                       |
+| `videoWebRtcMode`   | `number` | No         | - Must equal `0` or `1`                                                                     |
 
 > [!IMPORTANT]
 > If `meetingNumber` or `role` are supplied in the request body, the other must be present as well. If both are supplied, the JWT will be valid for web, otherwise it will be valid for native.
