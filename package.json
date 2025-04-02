@@ -6,7 +6,7 @@
   "main": "src/index.js",
   "scripts": {
     "format": "prettier --write src/*.js",
-    "prepare": "husky install",
+    "prepare": "husky",
     "start": "node src/index.js"
   },
   "author": "Zoom Communications, Inc.",
@@ -24,12 +24,12 @@
   "license": "ISC",
   "dependencies": {
     "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
-    "express": "^4.21.1",
-    "jsrsasign": "^11.0.0"
+    "dotenv": "^16.4.7",
+    "express": "^4.21.2",
+    "jsrsasign": "^11.1.0"
   },
   "devDependencies": {
-    "husky": "^8.0.0",
-    "prettier": "^3.1.1"
+    "husky": "^9.1.7",
+    "prettier": "^3.5.3"
   }
 }
