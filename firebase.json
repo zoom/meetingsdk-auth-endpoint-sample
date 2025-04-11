@@ -1,0 +1,45 @@
+{
+  "hosting": {
+	"site": "zoom-attendant-meeting-auth",
+    "public": "public",
+    "ignore": [
+      "firebase.json",
+      "**/.*",
+      "**/node_modules/**"
+    ],
+    "rewrites": [
+      {
+        "source": "**",
+        "destination": "/index.html"
+      }
+    ],
+	"headers": [
+		{
+			"source": "**/*.@(js|css)",
+			"headers": [
+				{
+					"key": "Cache-Control",
+					"value": "no-cache"
+				},
+				{
+					"key": "Access-Control-Allow-Origin",
+					"value": "*"
+				}
+			]
+		},
+		{
+			"source": "/service-worker.js",
+			"headers": [
+				{
+					"key": "Cache-Control",
+					"value": "no-cache"
+				},
+				{
+					"key": "Access-Control-Allow-Origin",
+					"value": "*"
+				}
+			]
+		}
+	]
+  }
+}
