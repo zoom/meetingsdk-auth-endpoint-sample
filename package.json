@@ -25,7 +25,7 @@
   "dependencies": {
     "cors": "^2.8.5",
     "dotenv": "^16.4.7",
-    "express": "^4.21.2",
+    "express": "^4.22.1",
     "jsrsasign": "^11.1.0"
   },
   "devDependencies": {
